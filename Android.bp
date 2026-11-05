@@ -14,6 +14,16 @@
 soong_namespace {
 }
 
+# moto-settings framework jar - provides com.motorola.android.provider
+# .MotorolaSettings needed by MotoDolbyDax3 at runtime.
+dex_import {
+    name: "moto-settings",
+    owner: "motorola",
+    jars: [
+        "proprietary/system/framework/moto-settings.jar",
+    ],
+}
+
 cc_prebuilt_library_shared {
 	name: "libdapparamstorage",
 	owner: "xiaomi",

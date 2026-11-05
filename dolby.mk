@@ -58,10 +58,11 @@ PRODUCT_PACKAGES += \
     MotoDolbyDax3
 
 # Motorola framework libraries MotoDolbyDax3 needs.
-# NOTE: moto-settings.jar is NOT here - the vendor blob repo
-# (vendor/motorola/sm6375-common) already ships it, and shipping a second copy
-# collides with that repo's install rule. We only supply the three it lacks.
+# moto-settings.jar is provided here (instead of vendor/motorola/sm6375-common
+# or the motocam repo) because Dolby Atmos reads com.motorola.android.provider
+# .MotorolaSettings$Secure at startup and force-closes without it.
 PRODUCT_COPY_FILES += \
+    $(DOLBY_PATH)/proprietary/system/framework/moto-settings.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/moto-settings.jar \
     $(DOLBY_PATH)/proprietary/system/framework/motoaudioeffectsdk.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/motoaudioeffectsdk.jar \
     $(DOLBY_PATH)/proprietary/system/framework/moto-checkin.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/moto-checkin.jar \
     $(DOLBY_PATH)/proprietary/system/framework/com.motorola.frameworks.core.addon.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/com.motorola.frameworks.core.addon.jar
