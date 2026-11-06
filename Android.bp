@@ -14,8 +14,8 @@
 soong_namespace {
 }
 
-# moto-settings framework jar - provides com.motorola.android.provider
-# .MotorolaSettings needed by MotoDolbyDax3 at runtime.
+// moto-settings framework jar - provides com.motorola.android.provider
+// .MotorolaSettings needed by MotoDolbyDax3 at runtime.
 dex_import {
     name: "moto-settings",
     owner: "motorola",
