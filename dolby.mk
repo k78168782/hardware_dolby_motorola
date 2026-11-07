@@ -62,6 +62,7 @@ PRODUCT_PACKAGES += \
 # or the motocam repo) because Dolby Atmos reads com.motorola.android.provider
 # .MotorolaSettings$Secure at startup and force-closes without it.
 PRODUCT_COPY_FILES += \
+    $(DOLBY_PATH)/proprietary/system/framework/moto-settings.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/moto-settings.jar \
     $(DOLBY_PATH)/proprietary/system/framework/motoaudioeffectsdk.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/motoaudioeffectsdk.jar \
     $(DOLBY_PATH)/proprietary/system/framework/moto-checkin.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/moto-checkin.jar \
     $(DOLBY_PATH)/proprietary/system/framework/com.motorola.frameworks.core.addon.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/com.motorola.frameworks.core.addon.jar
