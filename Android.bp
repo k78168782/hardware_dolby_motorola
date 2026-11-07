@@ -14,6 +14,22 @@
 soong_namespace {
 }
 
+// Motorola settings provider (com.motorola.android.providers.settings)
+// MotoDolbyDax3 reads MotorolaSettings.Secure at startup; without this provider
+// the ContentProvider is null and DAXApplication crashes with an NPE.
+// It declares sharedUserId="android.uid.system", so it MUST be platform-signed.
+android_app_import {
+    name: "MotorolaSettingsProvider",
+    owner: "motorola",
+    apk: "proprietary/system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk",
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
 cc_prebuilt_library_shared {
 	name: "libdapparamstorage",
 	owner: "xiaomi",

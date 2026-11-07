@@ -55,7 +55,8 @@ PRODUCT_PACKAGES += \
 # Motorola Dolby apps
 PRODUCT_PACKAGES += \
     daxService \
-    MotoDolbyDax3
+    MotoDolbyDax3 \
+    MotorolaSettingsProvider
 
 # Motorola framework libraries MotoDolbyDax3 needs.
 # moto-settings.jar is provided here (instead of vendor/motorola/sm6375-common
